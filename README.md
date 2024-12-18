@@ -46,4 +46,4 @@ Here is the wiring diagram for the Shelly Uni to be connected in parallel with t
 Contributions are welcome! Feel free to submit a pull request or open an issue for any bugs or feature requests.
 
 ## License
-fail2ban-ops and all individual scripts are under the BSD 3-Clause license unless explicitly noted otherwise. Please refer to the [LICENSE](LICENSE).
+smart-doorbell-shelly and all individual scripts are under the BSD 3-Clause license unless explicitly noted otherwise. Please refer to the [LICENSE](LICENSE).
