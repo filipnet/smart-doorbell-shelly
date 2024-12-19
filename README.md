@@ -1,6 +1,21 @@
 # smart-doorbell-shelly
 A smart home doorbell integration using Shelly UNI and a generic doorbell transformer, enabling notifications and automation via MQTT or Home Assistant.
 
+<!-- TOC -->
+
+- [smart-doorbell-shelly](#smart-doorbell-shelly)
+    - [Features](#features)
+    - [Components](#components)
+    - [Wiring Diagram - Connections Table](#wiring-diagram---connections-table)
+    - [Wiring diagram](#wiring-diagram)
+    - [Operation](#operation)
+    - [Resources](#resources)
+    - [Contributing](#contributing)
+    - [License](#license)
+
+<!-- /TOC -->
+
+
 ## Features
 - Smart doorbell notifications
 - Integration with smart home platforms
@@ -14,24 +29,28 @@ A smart home doorbell integration using Shelly UNI and a generic doorbell transf
 - Existing doorbell wiring
 - Optional: Smart home automation tools like Home Assistant, MQTT Broker, or Node-RED
 
-## Wiring diagram
+## Wiring Diagram - Connections Table
 Here is the wiring diagram for the Shelly Uni to be connected in parallel with the button to detect the button press, without controlling the gong directly:
 
-### Wiring: Shelly Uni in Parallel with Button (Gong is Detected, Not Controlled)
+| **Device/Component** | **Connection**   | **Description/Connection**                            |
+|-----------------------|------------------|------------------------------------------------------|
+| **Shelly UNI**        | VCC              | Parallel to the push button and 12V~ transformer     |
+|                       | GND              | Parallel to the doorbell transformer and chime       |
+|                       | ADC_IN           | Not connected (unused)                               |
+|                       | VCC_SENSOR       | Not connected (unused)                               |
+|                       | DATA_SENSOR      | Not connected (unused)                               |
+|                       | GND_SENSOR       | Not connected (unused)                               |
+|                       | IN_1             | To the doorbell push button minus (-) contact        |
+|                       | IN_2             | Not connected (unused)                               |
+| **Push Button**       | Button (1)       | Connection to IN_1 and 12V~ on Shelly UNI VCC        |
+|                       | Button (2)       | Connection to the + of the doorbell chime            |
+| **Doorbell Chime**    | Gong (A)         | Connection to the switched port of the button        |
+|                       | Gong (B)         | Connection to the - of the transformer               |
 
-| **Component**      | **Designation**  | **Wiring**                                         |
-|--------------------|------------------|----------------------------------------------------|
-| Shelly Uni         | IN               | Parallel to the button - Contact 1                 |
-|                    | I1               | Parallel to the button - Contact 2                 |
-|                    | O                | Not connected (unused)                             |
-|                    | N                | Neutral (from power source)                        |
-|                    | L                | Live (from power source)                           |
-| Button             | Button (1)       | Connection to IN and I1 on Shelly Uni              |
-|                    | Button (2)       | Connection to + of the gong                        |
-| Gong               | Gong (A)         | Connection to + of the button                      |
-|                    | Gong (B)         | Connection to Neutral (N)                          |
+## Wiring diagram
+![Circuit diagram](images/circuit_diagram.png)
 
-### Operation:
+## Operation
 - The button has a + terminal (for the gong) and connections to the Shelly Uni.
 - The Shelly Uni is wired in parallel with the button, so it detects the button press (via IN and I1).
 - The gong is not controlled by the Shelly Uni but is triggered directly by the button (via the + terminal of the button).
