@@ -41,6 +41,7 @@ Here is the wiring diagram for the Shelly Uni to be connected in parallel with t
 - **Heidemann GT 3173 Datasheet** - `resources/Heidemann_70044_Transformator.pdf`
 - **Heidemann Doorbell** - `resources/Heidemann_70169_Doorbell.pdf`
 - **Shelly UNI Datasheet** - `resources/Shelly-UNI-User-Guide.pdf`
+- **Gong melodies** - https://www.grothe.de/Download/Gongmelodien/
 
 ## Contributing
 Contributions are welcome! Feel free to submit a pull request or open an issue for any bugs or feature requests.
